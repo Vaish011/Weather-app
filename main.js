@@ -1,6 +1,6 @@
 const icon = document.getElementById("weather-icon");
 
-let weather = "Clouds"; // try Rain, Snow, Clear
+let weather = "Snow"; // try Rain, Snow, Clear
 
 if (weather === "Clouds") {
   icon.src = "cloud.png";
