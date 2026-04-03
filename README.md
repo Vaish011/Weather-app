@@ -22,7 +22,7 @@ https://openweathermap.org/api/geocoding-api
 - **To get current location weather** :- 
 https://openweathermap.org/current
 
-- **To get 6 day forecast** :-  https://openweathermap.org/forecast6
+- **To get 5 day forecast** :-  https://openweathermap.org/forecast5
 
 ## Getting Started
 
