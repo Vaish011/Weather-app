@@ -14,7 +14,7 @@ if (weather === "Clouds") {
 async function searchCity() {
     const city = document.getElementById("search-input").value;
 
-    const apiKey = "YOUR_API_KEY_HERE";
+    const apiKey = 89ad8ff1eb1720de8864d021b2f7d833;
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
