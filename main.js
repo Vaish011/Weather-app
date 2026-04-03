@@ -27,3 +27,7 @@ async function searchCity() {
     document.querySelector(".city-name").innerText = data.name;
 document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
 }
+catch (error) {
+        alert("City not found ❌");
+    }
+}
