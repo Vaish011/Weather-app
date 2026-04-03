@@ -68,7 +68,7 @@ function getWeatherByCoords(lat, lon) {
         alert("Status: " + res.status);
         return res.json();
     })
-        .then(data => updateUI(data))
+        .then(data => updateUIHome(data))
         .catch((err) => alert("Fetch failed: " + err.message));
 }
 
@@ -82,6 +82,29 @@ function getWeather(city) {
 }
 
 // 🔹 update UI 
+
+
+function updateUIHome(data) {
+    if (data.cod !== 200) return;
+    
+    const cityName = document.getElementById("city-name");
+    if (cityName) cityName.innerText = data.name;
+    
+    const weatherMain = document.getElementById("weather-main");
+    if (weatherMain) weatherMain.innerText = data.weather[0].main;
+    
+    const humidity = document.getElementById("humidity");
+    if (humidity) humidity.innerText = data.main.humidity + "%";
+    
+    const feelsLike = document.getElementById("feels-like");
+    if (feelsLike) feelsLike.innerText = data.main.feels_like;
+}
+
+
+
+
+
+
 function updateUI(data) {
     if (data.cod !== 200) return;
     console.log(data.name);
