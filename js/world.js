@@ -82,3 +82,21 @@ document.querySelector(".btn-icon").addEventListener("click", searchCity);
 window.onload = function() {
     randomCities.forEach(city => getWeatherForCity(city));
 };
+
+
+//date 
+function updateDate() {
+    const dateElement = document.getElementById("current-date");
+
+    const today = new Date();
+
+    const options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
+
+    dateElement.innerText = today.toLocaleDateString("en-US", options);
+}
+
+updateDate();
