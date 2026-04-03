@@ -11,7 +11,17 @@ if (weather === "Clouds") {
 } else {
   icon.src = "sun.png";
 }
-function searchCity() {
-  const city = document.getElementById("search-input").value;
-  console.log("City:", city);
+async function searchCity() {
+    const city = document.getElementById("search-input").value;
+
+    const apiKey = "YOUR_API_KEY_HERE";
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data);
+
+    alert("Temperature: " + data.main.temp + "°C");
 }
