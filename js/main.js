@@ -57,17 +57,9 @@ const apiKey = "89ad8ff1eb1720de8864d021b2f7d833";
 function getWeatherByCoords(lat, lon) {
     alert("GPS got: " + lat + ", " + lon);
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-    alert("URL is: " + url);
-    /*fetch(url)
-        .then(res => res.json())
-        .then(data => updateUI(data))
-        .catch(() => alert("Fetch failed!"))*/
 
     fetch(url)
-        .then(res => {
-        alert("Status: " + res.status);
-        return res.json();
-    })
+        .then(res => res.json())
         .then(data => updateUIHome(data))
         .catch((err) => alert("Fetch failed: " + err.message));
 }
