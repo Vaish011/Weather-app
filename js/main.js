@@ -81,6 +81,7 @@ function getWeather(city) {
 // 🔹 update UI (common for both)
 function updateUI(data) {
     if (data.cod !== 200) return;
+    console.log(data.name);
 
     document.querySelector("city-name").innerText = data.name;
     document.querySelector("weather-temp").innerText = data.main.temp + "°C";
