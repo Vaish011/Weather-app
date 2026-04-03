@@ -1,3 +1,0 @@
-function searchCity() {
-    alert("clicked");
-}
