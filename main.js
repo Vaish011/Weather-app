@@ -11,3 +11,7 @@ if (weather === "Clouds") {
 } else {
   icon.src = "sun.png";
 }
+function searchCity() {
+  const city = document.getElementById("search-input").value;
+  alert("You searched: " + city);
+}
