@@ -243,3 +243,17 @@ nav ul li a {
     justify-content: center;
     padding: 20px;
 }
+
+/* hidden by default */
+#add-section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* when active */
+#add-section.active {
+    max-height: 400px;
+    opacity: 1;
+}
