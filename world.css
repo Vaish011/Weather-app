@@ -67,15 +67,10 @@ nav ul li a {
   display: flex;
   justify-content: center;
 }
-.add-section{
-  min-width: 280px;
-  height: 250px;
-  top: -60rem;
-  border-radius: 40px;
-  border: 1px solid var(--white-color);
-  position: absolute;
-  transition: .4s ease-in;
-  background-color: var(--font-color-main);
+.add-section {
+    width: 100%;
+    padding: 10px;
+    display: none;
 }
 .add-section-title{
   text-align: center;
@@ -244,14 +239,9 @@ nav ul li a {
     padding: 20px;
 }
 
-/* hidden by default */
-#add-section {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.4s ease;
+.add-section.active {
+    display: block;
 }
-
 /*#add-section {
     max-height: 0;
     overflow: hidden;
