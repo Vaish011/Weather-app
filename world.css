@@ -105,7 +105,7 @@ nav ul li a {
 }
 .search-icon i {
   font-size: 18px;
-  color: var(--font-color-main);
+  color: #332464;
 }
 .search input {
   width: 80%;
@@ -116,7 +116,7 @@ nav ul li a {
   outline: none;
 }
 .search input::placeholder {
-  color: var(--font-color-main);
+  color: #332464;
 }
 .messages{
   color: var(--white-color);
@@ -252,7 +252,22 @@ nav ul li a {
     transition: all 0.4s ease;
 }
 
-/* when active */
+/*#add-section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    width: 100%;
+}*/
+
+#add-section {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    width: 100%;
+}
+
 #add-section.active {
     max-height: 400px;
     opacity: 1;
