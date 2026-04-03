@@ -26,4 +26,52 @@ async function searchCity() {
 
     document.querySelector(".city-name").innerText = data.name;
 document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
+
+
+    // 🌥 Weather Condition
+    document.querySelector(".weather-main").innerText =
+      data.weather[0].main;
+
+    // 💨 Wind
+    document.querySelector(".wind").innerText =
+      data.wind.speed + " m/s";
+
+    // 🌡 Pressure
+    document.querySelector(".pressure").innerText =
+      data.main.pressure + " mbar";
+
+    // 💧 Humidity
+    document.querySelector(".humidity").innerText =
+      data.main.humidity + "%";
+
+    // 🌅 Sunrise
+    const sunrise = new Date(data.sys.sunrise * 1000);
+    document.querySelector(".sunrise").innerText =
+      sunrise.toLocaleTimeString();
+
+    // 🌇 Sunset
+    const sunset = new Date(data.sys.sunset * 1000);
+    document.querySelector(".sunset").innerText =
+      sunset.toLocaleTimeString();
+
+    // 🌤 Icon Change
+    const weatherType = data.weather[0].main;
+
+    if (weatherType === "Clouds") {
+      icon.src = "cloud.png";
+    } else if (weatherType === "Rain") {
+      icon.src = "rain.png";
+    } else if (weatherType === "Snow") {
+      icon.src = "snow.png";
+    } else if (weatherType === "Mist") {
+      icon.src = "mist.png";
+    } else {
+      icon.src = "sun.png";
+    }
+
+  } catch (error) {
+    alert("City not found 😢");
+    console.log(error);
+  }
+} 
 }
