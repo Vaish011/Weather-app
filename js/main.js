@@ -175,6 +175,7 @@ window.onload = function () {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
                 getWeatherByCoords(lat, lon);
+                getForecast(lat, lon);
             },
             () => {
                 // fallback if user denies location
