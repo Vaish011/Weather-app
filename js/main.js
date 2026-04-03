@@ -83,18 +83,18 @@ function updateUI(data) {
     if (data.cod !== 200) return;
     console.log(data.name);
 
-    document.querySelector("city-name").innerText = data.name;
-    document.querySelector("weather-temp").innerText = data.main.temp + "°C";
-    document.querySelector("weather-main").innerText = data.weather[0].main;
+    document.querySelector(".city-name").innerText = data.name;
+    document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
+    document.querySelector(".weather-main").innerText = data.weather[0].main;
 
-    document.querySelector("wind").innerText = data.wind.speed + " m/s";
-    document.querySelector("humidity").innerText = data.main.humidity + "%";
+    document.querySelector(".wind").innerText = data.wind.speed + " m/s";
+    document.querySelector(".humidity").innerText = data.main.humidity + "%";
 
     const sunrise = new Date(data.sys.sunrise * 1000);
     const sunset = new Date(data.sys.sunset * 1000);
 
-    document.querySelector("sunrise").innerText = sunrise.toLocaleTimeString();
-    document.querySelector("sunset").innerText = sunset.toLocaleTimeString();
+    document.querySelector(".sunrise").innerText = sunrise.toLocaleTimeString();
+    document.querySelector(".sunset").innerText = sunset.toLocaleTimeString();
 }
 
 // 🔹 search button function 
