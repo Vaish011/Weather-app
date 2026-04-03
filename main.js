@@ -69,9 +69,8 @@ document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
       icon.src = "sun.png";
     }
 
-  } catch (error) {
+  catch (error) {
     alert("City not found 😢");
     console.log(error);
   }
 } 
-}
