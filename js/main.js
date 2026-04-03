@@ -170,6 +170,7 @@ function getForecast(lat, lon) {
 
 function updateWeatherIcon(condition) {
     const icon = document.getElementById("weather-icon");
+    if (!icon) return; 
     const icons = {
         "Clear": "sun.png",
         "Clouds": "cloud.png",
