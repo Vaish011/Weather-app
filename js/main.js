@@ -61,7 +61,7 @@ function getWeatherByCoords(lat, lon) {
     fetch(url)
         .then(res => res.json())
         .then(data => updateUI(data))
-        .catch(() => console.log("Error"));
+        .catch(() => alert("Fetch failed!"))
 }
 
 // 🔹 get weather using city (for search page)
