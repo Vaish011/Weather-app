@@ -198,3 +198,48 @@ nav ul li a {
     border-radius: 0 0 20px 20px;
   }
 }
+.city-card {
+    background-color: var(--font-color-main);
+    border-radius: 20px;
+    padding: 15px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: var(--white-color);
+}
+
+.city-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.city-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.city-card .temp {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.city-card .desc {
+    font-size: 13px;
+}
+
+.city-card .details {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+.city-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
