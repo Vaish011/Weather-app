@@ -135,6 +135,36 @@ function searchCity() {
     }
 }
 
+
+function getForecast(lat, lon) {
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const box = document.getElementById("future-forecast-box");
+            box.innerHTML = "";
+            
+            // Get one forecast per day (every 8th item = 24 hours)
+            const daily = data.list.filter((item, index) => index % 8 === 0);
+            
+            daily.forEach(day => {
+                const date = new Date(day.dt * 1000);
+                const dayName = date.toLocaleDateString("en-US", {weekday: "short"});
+                const temp = Math.round(day.main.temp) + "°";
+                const desc = day.weather[0].main;
+                
+                box.innerHTML += `
+                    <div class="forecast-day">
+                        <p>${dayName}</p>
+                        <p>${temp}</p>
+                        <p>${desc}</p>
+                    </div>
+                `;
+            });
+        })
+        .catch(() => console.log("Forecast error"));
+}
 // 🔹 GPS on homepage load
 window.onload = function () {
 
