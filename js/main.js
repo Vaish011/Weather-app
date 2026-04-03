@@ -102,6 +102,8 @@ function getWeather(city) {
     
     const weatherToday = document.querySelector(".weather-main-today");
     if (weatherToday) weatherToday.innerText = data.weather[0].main;
+
+    updateWeatherIcon(data.weather[0].main);
     }
 
 
@@ -165,6 +167,25 @@ function getForecast(lat, lon) {
         })
         .catch(() => console.log("Forecast error"));
 }
+
+function updateWeatherIcon(condition) {
+    const icon = document.getElementById("weather-icon");
+    const icons = {
+        "Clear": "sun.png",
+        "Clouds": "cloud.png",
+        "Rain": "rain.png",
+        "Drizzle": "rain.png",
+        "Snow": "snow.png",
+        "Thunderstorm": "thunderstorm.png",
+        "Mist": "mist.png",
+        "Haze": "haze.png",
+        "Wind": "wind.png"
+    };
+    
+    icon.src = icons[condition] || "sun.png";
+}
+
+
 // 🔹 GPS on homepage load
 window.onload = function () {
 
