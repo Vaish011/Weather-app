@@ -100,3 +100,12 @@ function updateDate() {
 }
 
 updateDate();
+
+//toggle 
+
+const btn = document.querySelector(".btn-icon");
+const section = document.getElementById("add-section");
+
+btn.addEventListener("click", () => {
+    section.classList.toggle("active");
+});
