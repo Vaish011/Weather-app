@@ -19,15 +19,16 @@ async function searchCity() {
 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-    const response = await fetch(url);
-    const data = await response.json();
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
 
-    console.log(data);
+        document.querySelector(".return").style.display = "block"; 
 
-    document.querySelector(".city-name").innerText = data.name;
-document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
-}
-catch (error) {
+        document.querySelector(".city-name").innerText = data.name;
+        document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
+
+    } catch (error) {
         alert("City not found ❌");
     }
 }
