@@ -23,5 +23,6 @@ async function searchCity() {
 
     console.log(data);
 
-    alert("Temperature: " + data.main.temp + "°C");
+    document.getElementById("city").innerText = city;
+  document.getElementById("temp").innerText = data.main.temp + "°C";
 }
