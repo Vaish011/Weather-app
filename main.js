@@ -13,5 +13,5 @@ if (weather === "Clouds") {
 }
 function searchCity() {
   const city = document.getElementById("search-input").value;
-  alert("You searched: " + city);
+  console.log("City:", city);
 }
