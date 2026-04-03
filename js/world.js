@@ -102,5 +102,6 @@ updateDate();
 //toggle 
 
 document.querySelector(".btn-icon").addEventListener("click", function() {
-    alert("button clicked!");
+    const addSection = document.querySelector(".add-section");
+    alert("Found: " + addSection);
 });
