@@ -100,7 +100,8 @@ function updateDate() {
 updateDate();
 
 //toggle 
-const btn = document.querySelector(".toggle-btn");
-btn.addEventListener("click", () => {
-    section.classList.toggle("active");
+
+document.querySelector(".btn-icon").addEventListener("click", function() {
+    const addSection = document.getElementById("add-section");
+    addSection.classList.toggle("active");
 });
