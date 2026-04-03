@@ -67,10 +67,11 @@ nav ul li a {
   display: flex;
   justify-content: center;
 }
-.add-section{
+.add-section {
     display: none;
     width: 100%;
     padding: 10px;
+    background-color: var(--white-color);
 }
 .add-section-title{
   text-align: center;
