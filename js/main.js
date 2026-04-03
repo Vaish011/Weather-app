@@ -78,14 +78,14 @@ function getWeather(city) {
         .catch(() => alert("City not found"));
 }
 
-// 🔹 update UI (common for both)
+// 🔹 update UI 
 function updateUI(data) {
     if (data.cod !== 200) return;
     console.log(data.name);
 
-    document.querySelector("city-name").innerText = data.name;
-    document.querySelector("weather-temp").innerText = data.main.temp + "°C";
-    document.querySelector("weather-main").innerText = data.weather[0].main;
+    document.querySelector(".city-name").innerText = data.name;
+    document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
+    document.querySelector(".weather-main").innerText = data.weather[0].main;
 
     document.querySelector("wind").innerText = data.wind.speed + " m/s";
     document.querySelector("humidity").innerText = data.main.humidity + "%";
@@ -97,7 +97,7 @@ function updateUI(data) {
     document.querySelector("sunset").innerText = sunset.toLocaleTimeString();
 }
 
-// 🔹 search button function (KEEP THIS)
+// 🔹 search button function 
 function searchCity() {
     const city = document.getElementById("search-input").value.trim();
     if (city) {
