@@ -1,3 +1,4 @@
+alert("JS loaded");
 const icon = document.getElementById("weather-icon");
 
 let weather = "Snow"; // try Rain, Snow, Clear
