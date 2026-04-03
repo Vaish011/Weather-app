@@ -55,10 +55,7 @@ const apiKey = "89ad8ff1eb1720de8864d021b2f7d833";
 
 // 🔹 get weather using coordinates
 function getWeatherByCoords(lat, lon) {
-    const url = "https://api.openweathermap.org/data/2.5/weather?lat=" 
-                + lat + 
-                "&lon=" + lon + 
-                "&units=metric&appid=" + apiKey;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
     fetch(url)
         .then(res => res.json())
@@ -68,10 +65,7 @@ function getWeatherByCoords(lat, lon) {
 
 // 🔹 get weather using city (for search page)
 function getWeather(city) {
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=" 
-                + city + 
-                "&units=metric&appid=" + apiKey;
-
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     fetch(url)
         .then(res => res.json())
         .then(data => updateUI(data))
