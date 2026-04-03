@@ -75,8 +75,6 @@ document.querySelector(".searchinput").addEventListener("keypress", function(e) 
     if (e.key === "Enter") searchCity();
 });
 
-// Search on + button click
-document.querySelector(".btn-icon").addEventListener("click", searchCity);
 
 // Load random cities on start
 window.onload = function() {
@@ -102,10 +100,7 @@ function updateDate() {
 updateDate();
 
 //toggle 
-
-const btn = document.querySelector(".btn-icon");
-const section = document.getElementById("add-section");
-
+const btn = document.querySelector(".toggle-btn");
 btn.addEventListener("click", () => {
     section.classList.toggle("active");
 });
