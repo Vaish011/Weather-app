@@ -83,22 +83,34 @@ function getWeather(city) {
 
 // 🔹 update UI 
 
-
-function updateUIHome(data) {
+    function updateUIHome(data) {
     if (data.cod !== 200) return;
     
+    // City name
     const cityName = document.getElementById("city-name");
     if (cityName) cityName.innerText = data.name;
     
+    // Weather description
     const weatherMain = document.getElementById("weather-main");
     if (weatherMain) weatherMain.innerText = data.weather[0].main;
     
+    // Humidity and feels like
     const humidity = document.getElementById("humidity");
-    if (humidity) humidity.innerText = data.main.humidity + "%";
+    if (humidity) humidity.innerText = data.main.humidity;
     
     const feelsLike = document.getElementById("feels-like");
-    if (feelsLike) feelsLike.innerText = data.main.feels_like;
-}
+    if (feelsLike) feelsLike.innerText = Math.round(data.main.feels_like);
+    
+    // Today section
+    const tempMin = document.getElementById("temp-min-today");
+    if (tempMin) tempMin.innerText = Math.round(data.main.temp_min) + "°";
+    
+    const tempMax = document.getElementById("temp-max-today");
+    if (tempMax) tempMax.innerText = Math.round(data.main.temp_max) + "°";
+    
+    const weatherToday = document.querySelector(".weather-main-today");
+    if (weatherToday) weatherToday.innerText = data.weather[0].main;
+    }
 
 
 
