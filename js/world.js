@@ -103,5 +103,9 @@ updateDate();
 
 document.querySelector(".btn-icon").addEventListener("click", function() {
     const addSection = document.querySelector(".add-section");
-    addSection.classList.toggle("active");
+    if (addSection.style.display === "none") {
+        addSection.style.display = "block";
+    } else {
+        addSection.style.display = "none";
+    }
 });
