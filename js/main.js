@@ -125,3 +125,21 @@ window.onload = function () {
         getWeather("Delhi");
     }
 };
+
+
+
+
+window.onload = function () {
+    alert("onload running");
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                alert("GPS working");
+            },
+            () => {
+                alert("GPS denied");
+            }
+        );
+    }
+};
