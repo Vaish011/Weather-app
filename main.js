@@ -12,13 +12,34 @@ function searchCity() {
         .then(data => {
             console.log(data);
 
-            // show result section (important if hidden)
+            // show weather box
             const box = document.querySelector(".return");
             if (box) box.style.display = "block";
 
-            // update UI
+            // 🌆 City + Temp
             document.querySelector(".city-name").innerText = data.name;
             document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
+
+            // 🌤 Weather condition
+            document.querySelector(".weather-main").innerText = data.weather[0].main;
+
+            // 💨 Wind
+            document.querySelector(".wind").innerText = data.wind.speed + " m/s";
+
+            // 💧 Humidity
+            document.querySelector(".humidity").innerText = data.main.humidity + "%";
+
+            // 🌡 Pressure
+            document.querySelector(".pressure").innerText = data.main.pressure + " hPa";
+
+            // 🌅 Sunrise
+            const sunrise = new Date(data.sys.sunrise * 1000);
+            document.querySelector(".sunrise").innerText = sunrise.toLocaleTimeString();
+
+            // 🌇 Sunset
+            const sunset = new Date(data.sys.sunset * 1000);
+            document.querySelector(".sunset").innerText = sunset.toLocaleTimeString();
+
         })
         .catch(error => {
             alert("City not found ❌");
