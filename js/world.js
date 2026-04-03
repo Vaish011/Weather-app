@@ -103,5 +103,6 @@ updateDate();
 
 document.querySelector(".btn-icon").addEventListener("click", function() {
     const addSection = document.querySelector(".add-section");
-    alert("display is: " + addSection.style.display);
+    addSection.style.display = "block";
+    alert("changed to block!");
 });
