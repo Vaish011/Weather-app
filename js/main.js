@@ -1,5 +1,50 @@
 //alert("JS connected");
 
+//function searchCity() {
+    //alert("clicked");
+//}
+
+
 function searchCity() {
-    alert("clicked");
+    const city = document.getElementById("search-input").value.trim();
+
+    if (!city) {
+        alert("Enter city name");
+        return;
+    }
+
+    const apiKey = "89ad8ff1eb1720de8864d021b2f7d833";
+
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=" 
+                + city + 
+                "&units=metric&appid=" + apiKey;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.cod !== 200) {
+                alert("City not found");
+                return;
+            }
+
+            document.querySelector(".return").style.display = "block";
+
+            document.querySelector(".city-name").innerText = data.name;
+            document.querySelector(".weather-temp").innerText = data.main.temp + "°C";
+            document.querySelector(".weather-main").innerText = data.weather[0].main;
+
+            document.querySelector(".wind").innerText = data.wind.speed + " m/s";
+            document.querySelector(".humidity").innerText = data.main.humidity + "%";
+            document.querySelector(".pressure").innerText = data.main.pressure + " hPa";
+
+            const sunrise = new Date(data.sys.sunrise * 1000);
+            const sunset = new Date(data.sys.sunset * 1000);
+
+            document.querySelector(".sunrise").innerText = sunrise.toLocaleTimeString();
+            document.querySelector(".sunset").innerText = sunset.toLocaleTimeString();
+        })
+        .catch(() => {
+            alert("Error fetching data");
+        });
 }
