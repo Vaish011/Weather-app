@@ -76,6 +76,7 @@ function getWeather(city) {
 // 🔹 update UI 
 function updateUI(data) {
     if (data.cod !== 200) return;
+    alert("City not found");
     console.log(data.name);
 
     document.querySelector(".city-name").innerText = data.name;
