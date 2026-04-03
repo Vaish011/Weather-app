@@ -57,7 +57,7 @@ const apiKey = "89ad8ff1eb1720de8864d021b2f7d833";
 function getWeatherByCoords(lat, lon) {
     alert("GPS got: " + lat + ", " + lon);
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-
+    alert("URL is: " + url);
     fetch(url)
         .then(res => res.json())
         .then(data => updateUI(data))
