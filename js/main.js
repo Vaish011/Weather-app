@@ -65,11 +65,25 @@ function getWeatherByCoords(lat, lon) {
 }
 
 // 🔹 get weather using city (for search page)
-function getWeather(city) {
+/*function getWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     fetch(url)
         .then(res => res.json())
         .then(data => updateUI(data))
+        .catch(() => alert("City not found"));
+} */
+
+function getWeather(city) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            if (data.cod !== 200) {
+                alert("City not found!");
+                return;
+            }
+            updateUI(data);
+        })
         .catch(() => alert("City not found"));
 }
 
